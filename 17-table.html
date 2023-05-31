@@ -37,6 +37,7 @@
 
     <p id="tableDesc">프론트엔드 관련 기술 시험 결과를 나타낸 표입니다</p>
     <table border="1" summary="표의 요약 정보" aria-describedby="tableDesc">
+        <!-- aria-describedby="tableDesc" -> 연결하려는 태그의 id값과 동일해야 함 -->
         <thead>
             <tr>
                 <th>과목명</th>
@@ -51,6 +52,7 @@
                 <td headers="html ma01">100</td>
                 <td headers="js ma01">95</td>
                 <td headers="react ma01">98</td>
+                <!-- headers -> 테이블의 음성 인식을 위한 태그 -->
             </tr>
         </tfoot>
         <tbody>

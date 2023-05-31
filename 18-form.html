@@ -9,15 +9,19 @@
 <body>
     <h1>폼 관련 요소</h1>
     <form action="서버 URL" method="get">
+        <!-- 폼 사용 시 action, method 필수 get, post: 요청하고 받음 -->
         <fieldset>
             <legend>검색</legend>
             <div>
-                <label for="search">자료검색</label>
+                <label for="search">검색어</label>
                 <input id="search" type="search" placeholder="검색어" />
+                <input id="search" type="search" placeholder="검색어" name="search"
+                required />
             </div>
         </fieldset>
     </form>
     <button type="submit" form="searchForm">검색</button>
+    <!-- <button></button> 속성값과 form 속성값이 같을 시 form이 밖에 있어도 사용 가능 -->
 
         <!-- <div>
             <label for=""></label>
