@@ -1,4 +1,33 @@
 body {
   font-family: "SUIT";
-  font-weight: 300;
+  font-weight: 600;
+}
+
+.menu {
+  color: gray;
+  font-size: 36px;
+  border: 5px green dashed;
+}
+
+/* .menu li a{
+  color: inherit;
+} li 생략 가능 
+
+컬러는 에이전트 스타일이 정해져 있지만 폰트는 아님, 폰트는 바로 상속 가능
+border 속성은 상속에서 제외됨, 상속되는 속성과 되지 않는 속성 존재 
+-> 강제 상속은 가능 border: inherit; 사용
+합리적으로... 상속될 것만 됨........ */
+
+ul.menu li {
+  background-color: pink;
+}
+ul li.pick {
+  background-color: yellowgreen;
+}
+/* 값이 같으면 나중 선언을 우선으로 함 
+!important 항상 우선 순위(그러나 남발하면 안 됨)
+-> 우선 순위가 밀린 건지 확인하기 위해
+검사->style(디버깅 툴) 확인할 것 */
+.menu a {
+  color: inherit;
 }
