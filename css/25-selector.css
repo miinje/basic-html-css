@@ -1,10 +1,15 @@
-/* CSS 선택자(Selector) 
+/* CSS 선택자(Selector) */
+
+/*
 색상값 표기법
 #000000 -> 컬러 코드
 hsla(hue, saturation, lightness, alpha) 채도, 명도 등 
 rgb(red, green, blue) 빛의 삼원색
 rgba(red, green, blue, alpha) 빛의 삼원색+알파값
-black 등 */
+black 등 
+html 에서는 0부터 시작
+css 에서는 1부터 시작 
+*/
 
 /* 전체 선택자 */
 * {
@@ -14,10 +19,17 @@ black 등 */
 inherit: 값을 상속받을 것
 -> body로부터 상속받아 색을 사용할 것! */
 
+/* 가상 요소 선택자 */
+::selection {
+    background: #373e6a;
+    color: plum;
+}
+/* 선택자에 추가하는 키워드
+::selection -> 글자가 선택됐을 때 css 적용 */
+
 /* 태그 선택자 */
 body {
     font-family: "SUIT";
-    margin: 0;
     font-weight: 300;
     background-color: #121212;
     color: hsla(110, 100%, 100%, 1);
@@ -31,6 +43,10 @@ body {
     text-shadow: 4px 4px 3px #77f;
 }
 
+.align {
+    text-align: center;
+}
+
 ul.menu{
 	margin: 0;
 	padding-left: 0;
@@ -42,7 +58,67 @@ ul .class -> ul의 자식요소 class를 찾음 */
 
 /* id 선택자 */
 #demo {
-    border: red 5px solid;
+    border: aquamarine 5px solid;
 }
 /* id는 한 번만 사용할 수 있음
 border -> 테두리 */
+
+/* 속성 선택자 */
+.menu a[href$=".html"] {
+    background-color: blue;
+}
+/* .menu a[href$=".html"] ->
+클래스 메뉴에서 a 링크가 삽입된 것들 중 .html로 끝나는 것을 선택
+($: ~로 끝나는 것)
+
+href^="https://" -> 주소가 http://로 시작하는 것 (^: ~로 시작하는)
+lang="en" -> 언어가 영어인 것 */
+
+/* 자손 결합자
+공백으로 구분 ex) div span {…}
+자식 결합자 
+꺽쇠(>)로 구분 ex) div>span {…} 
+인접 형제 선택자 
+플러스(+)로 구분 ex) div+span {…} */
+
+/* 선택자 목록 */
+.fancy, .menu {
+    font-size: 24px;
+}
+/* 여러개의 선택자를 쉼표를 통해 구분해 동일한 스타일 적용 */
+
+/* 가상 요소 선택자(클래스와 함께 적용) */
+.align::before {
+    content: "이전 요소";
+}
+.align::after {
+    content: "다음 요소";
+}
+/* 콜론 두 개와 함께 붙여서 작성, 선택한 요소에 스타일을 적용 */
+
+/* 가상 클래스 */
+.menu li:nth-child(odd) {
+    color: yellowgreen;
+}
+
+.menu a:hover {
+    border: 5px solid olivedrab;
+}
+
+h1.menu:hover,
+h1.menu:focus {
+    background-color: teal;
+}
+/* 클래스 menu 안 리스트 중 2번째 자식 요소를 사용
+-n+2: 0번째부터 2개
+n+6: 1번째부터 7까지
+odd: 홀수 번째 선택
+
+.menu li:nth-child(-n+2), 
+.menu li:nth-child(n+7) -> 중복 선
+
+:hover -> 사용자가 마우스를 올렸을 때, 모든 것에 다 사용 가능!!!
+:focus -> 사용자가 포커스를 줬을 때, 포커스가 가능할 때 사용 가능
+마우스와 키보드 포커스가 갔을 때도 주고 싶을 때:
+tabindex="0"으로 적용
+ */
