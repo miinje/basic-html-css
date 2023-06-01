@@ -1,1 +1,42 @@
-<!-- HTML 코드를 작성해 주세요. -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>스크립팅 요소</title>
+    <link rel="stylesheet" href="./style/card.css" />
+    <script src="js/card.js" defer></script>
+    <noscript>
+        <p>Javascript를 지원하지 않은 환경에서는 서비스를 이용할 수 없습니다.</p>
+    </noscript>
+    <!-- 자바스크립트가 지원되지 않는 환경에서 지원하지 않음, 문구도 함께 띄움 -->
+</head>
+<body>
+    <button type="button" class="flip-button">카드 뒤집기</button>
+
+    <div class="card-wrapper">
+        <div class="card">
+            <div class="card-face card-face-black"></div>
+            <div class="card-face card-face-white"></div>
+        </div>
+    </div>
+
+    <!-- <script src="./js/card.js"></script>
+    
+    스크립트의 위치 변경(head 끝->body 끝): 
+    웹 브라우저는 자바스크립트 파일이 모두 다운로드될 때까지 html 파일 파싱을 중단함 
+    body가 해석되지 않은 채로 자바스크립트 진행 -> 실행 안 됨
+
+    but...
+    마지막에 둘 시 혼돈이 올 수도 있음(제자리 필요), 필요에 의해 defer, async 사용 권장
+
+    script 요소
+    1. async
+    html 해석을 진행하다 스크립트를 만나면 다운로드와 함께 진행 후 바로 해석
+
+    2. defer
+    html 해석을 진행하다 스크립트를 만나면 다운로드와 함께 진행, html 해석이 모두 끝난 후 해석
+    -->
+</body>
+</html>
