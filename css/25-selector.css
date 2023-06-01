@@ -1,4 +1,48 @@
+/* CSS 선택자(Selector) 
+색상값 표기법
+#000000 -> 컬러 코드
+hsla(hue, saturation, lightness, alpha) 채도, 명도 등 
+rgb(red, green, blue) 빛의 삼원색
+rgba(red, green, blue, alpha) 빛의 삼원색+알파값
+black 등 */
+
+/* 전체 선택자 */
+* {
+    color: inherit;
+}
+/* 상속받은 색과 나에게 정해진 색을 함께 받는다면 나에게 정해진 색을 사용 
+inherit: 값을 상속받을 것
+-> body로부터 상속받아 색을 사용할 것! */
+
+/* 태그 선택자 */
 body {
     font-family: "SUIT";
+    margin: 0;
     font-weight: 300;
+    background-color: #121212;
+    color: hsla(110, 100%, 100%, 1);
 }
+/* 요소 직접 선택자
+전역 요소에 태그 선택자를 바로 사용하는 건 안티 패턴(사용 지양함) */
+
+/* 클래스 선택자 */
+.fancy {
+    font-weight: bold;
+    text-shadow: 4px 4px 3px #77f;
+}
+
+ul.menu{
+	margin: 0;
+	padding-left: 0;
+    color: rgba(255, 40, 250, 0.5);
+}
+/* class는 중복해서 사용 가능, class 사용 권장
+ul.class -> ul에서 직접적으로 붙은 class를 찾음
+ul .class -> ul의 자식요소 class를 찾음 */
+
+/* id 선택자 */
+#demo {
+    border: red 5px solid;
+}
+/* id는 한 번만 사용할 수 있음
+border -> 테두리 */
